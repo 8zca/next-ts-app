@@ -25,5 +25,8 @@
         "@typescript-eslint"
     ],
     "rules": {
+        "space-before-function-paren": 0,
+        "react/jsx-uses-vars": 1,
+        "no-unused-vars": 0
     }
 }
