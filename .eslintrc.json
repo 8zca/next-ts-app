@@ -6,7 +6,11 @@
     },
     "extends": [
         "plugin:react/recommended",
-        "standard"
+        "standard",
+        "prettier",
+        "prettier/react",
+        "plugin:import/errors",
+        "plugin:import/warnings"
     ],
     "globals": {
         "Atomics": "readonly",
