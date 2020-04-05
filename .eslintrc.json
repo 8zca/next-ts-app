@@ -31,6 +31,8 @@
     "rules": {
         "space-before-function-paren": 0,
         "react/jsx-uses-vars": 1,
-        "no-unused-vars": 0
+        "no-unused-vars": 0,
+        "import/no-unresolved": 0,
+        "react/prop-types": 0
     }
 }
