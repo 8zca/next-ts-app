@@ -13,12 +13,14 @@ const IndexPage: React.FC = () => {
   const minus = () => dispatch(decrement())
 
   return (
-    <Layout title="Home | Next.js + TypeScript Example">
+    <Layout title='Home | Next.js + TypeScript Example'>
       <H1>Hello Next.js 👋</H1>
       <Box>
         <p>count Test</p>
         <p>current: {counter}</p>
-        <p><button onClick={plus}>PLUS</button> <button onClick={minus}>MINUS</button></p>
+        <p>
+          <button onClick={plus}>PLUS</button> <button onClick={minus}>MINUS</button>
+        </p>
       </Box>
     </Layout>
   )

@@ -21,18 +21,15 @@ const TodoPage: React.FC = () => {
 
   const list = todo.todos.map(row => (
     <Item key={row.id}>
-      {row.id} | {row.name} | {row.status} |
-      <button onClick={() => doingAction(row)}>着手</button> |
+      {row.id} | {row.name} | {row.status} |<button onClick={() => doingAction(row)}>着手</button> |
       <button onClick={() => doneAction(row)}>完了</button>
     </Item>
   ))
 
   return (
-    <Layout title="Todo | Next.js + TypeScript Example">
+    <Layout title='Todo | Next.js + TypeScript Example'>
       <H1>Todo 📝</H1>
-      <List>
-        {list}
-      </List>
+      <List>{list}</List>
       <p>
         <input type='text' onChange={handleChange} placeholder='タスク名' value={input} />
         <button onClick={handleClick}>追加</button>
@@ -47,8 +44,7 @@ const H1 = styled.h1`
   font-size: 18px;
   color: #666;
 `
-const List = styled.ul`
-`
+const List = styled.ul``
 const Item = styled.div`
   padding: 16px;
   border-bottom: 1px solid #ccc;
