@@ -1,5 +1,5 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit'
- 
+
 export type TodoType = {
   id: number
   name: string
@@ -7,17 +7,17 @@ export type TodoType = {
 }
 
 type State = {
-    count: number
-    todos: TodoType[]
+  count: number
+  todos: TodoType[]
 }
- 
+
 const initialState: State = {
   count: 1,
   todos: [
     {
-        id: 1,
-        name: 'bbb',
-        status: 'doing'
+      id: 1,
+      name: 'bbb',
+      status: 'doing'
     }
   ]
 }
@@ -47,7 +47,7 @@ const todoModule = createSlice({
     }
   }
 })
- 
-export const { create, doing, done }  = todoModule.actions
- 
+
+export const { create, doing, done } = todoModule.actions
+
 export default todoModule
