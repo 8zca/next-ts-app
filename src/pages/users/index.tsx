@@ -1,38 +1,40 @@
-import React from 'react'
-import { GetStaticProps } from 'next'
+import React, { useEffect } from 'react'
+import { useDispatch, useSelector } from 'react-redux'
 import Link from 'next/link'
-
-import { User } from '@/interfaces'
-import { sampleUserData } from '@/utils/sample-data'
 import Layout from '@/components/Layout'
 import List from '@/components/List'
+import { RootState } from '@/state/store'
+import { fetchUsers } from '@/state/modules/usersModule'
 
-type Props = {
-  items: User[]
+const Users: React.FC = () => {
+  const dispatch = useDispatch()
+  const users = useSelector((state: RootState) => state.users)
+  const fetch = () => dispatch(fetchUsers())
+
+  useEffect(() => {
+    fetch()
+  }, [])
+
+  let content = null
+  if (users.loading) {
+    content = <div>loading...</div>
+  } else if (users.error) {
+    content = <div>fetch error</div>
+  } else {
+    content = <List items={users.list} />
+  }
+
+  return (
+    <Layout title='Users List | Next.js + TypeScript Example'>
+      <h1>Users List</h1>
+      {content}
+      <p>
+        <Link href='/'>
+          <a>Go home</a>
+        </Link>
+      </p>
+    </Layout>
+  )
 }
 
-const WithStaticProps = ({ items }: Props) => (
-  <Layout title='Users List | Next.js + TypeScript Example'>
-    <h1>Users List</h1>
-    <p>
-      Example fetching data from inside <code>getStaticProps()</code>.
-    </p>
-    <p>You are currently on: /users</p>
-    <List items={items} />
-    <p>
-      <Link href='/'>
-        <a>Go home</a>
-      </Link>
-    </p>
-  </Layout>
-)
-
-export const getStaticProps: GetStaticProps = async () => {
-  // Example for including static props in a Next.js function component page.
-  // Don't forget to include the respective types for any props passed into
-  // the component.
-  const items: User[] = sampleUserData
-  return { props: { items } }
-}
-
-export default WithStaticProps
+export default Users
