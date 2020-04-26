@@ -6,7 +6,7 @@
     "build": "next build",
     "start": "next start",
     "type-check": "tsc",
-    "format": "prettier --write 'src/**/*.tsx' 'src/**/*.ts'",
+    "format": "prettier-eslint --write 'src/**/*.tsx' 'src/**/*.ts'",
     "lint": "eslint --ext .js,.jsx,.ts,.tsx ."
   },
   "dependencies": {
