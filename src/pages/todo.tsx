@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import styled from 'styled-components'
-import { create, doing, done, TodoType } from '@/state/modules/todoModule'
+import { create, doing, done, TodoType } from '@/state/modules/todo'
 import { RootState } from '@/state/store'
 import Layout from '@/components/Layout'
 
