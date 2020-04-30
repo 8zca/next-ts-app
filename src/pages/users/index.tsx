@@ -4,7 +4,7 @@ import Link from 'next/link'
 import Layout from '@/components/Layout'
 import List from '@/components/List'
 import { RootState } from '@/state/store'
-import { fetchUsers } from '@/state/modules/usersModule'
+import { fetchUsers } from '@/state/modules/users'
 
 const Users: React.FC = () => {
   const dispatch = useDispatch()

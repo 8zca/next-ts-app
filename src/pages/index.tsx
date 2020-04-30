@@ -1,7 +1,7 @@
 import React from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import styled from 'styled-components'
-import { increment, decrement } from '@/state/modules/counterModule'
+import { increment, decrement } from '@/state/modules/counter'
 import { RootState } from '@/state/store'
 import Layout from '@/components/Layout'
 

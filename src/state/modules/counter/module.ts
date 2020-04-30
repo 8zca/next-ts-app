@@ -1,6 +1,5 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit'
-
-type State = number
+import { State } from './types'
 
 const counterModule = createSlice({
   name: 'counter',

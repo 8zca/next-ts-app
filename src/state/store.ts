@@ -1,7 +1,7 @@
 import { combineReducers, configureStore, getDefaultMiddleware } from '@reduxjs/toolkit'
-import counterModule from './modules/counterModule'
-import todoModule from './modules/todoModule'
-import usersModule from './modules/usersModule'
+import counterModule from './modules/counter'
+import todoModule from './modules/todo'
+import usersModule from './modules/users'
 
 const rootReducer = combineReducers({
   counter: counterModule.reducer,

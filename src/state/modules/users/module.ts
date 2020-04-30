@@ -1,17 +1,6 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit'
 import fetch from 'isomorphic-unfetch'
-
-export type UserType = {
-  id: number
-  name: string
-}
-
-type State = {
-  count: number
-  list: UserType[]
-  error: boolean
-  loading: boolean
-}
+import { State, UserType } from './types'
 
 const initialState: State = {
   count: 0,
