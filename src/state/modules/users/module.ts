@@ -12,7 +12,7 @@ const initialState: State = {
 const fetchUsers = createAsyncThunk(
   'users',
   async (_thunkAPI) => {
-    const response = await fetch('api/users')
+    const response = await fetch('/api/users')
     const json = await response.json()
     return json as UserType[]
   }

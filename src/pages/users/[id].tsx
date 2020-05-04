@@ -1,19 +1,18 @@
 import React from 'react'
-import { GetStaticProps, GetStaticPaths } from 'next'
-
+import { GetServerSideProps } from 'next'
+import fetch from 'isomorphic-unfetch'
 import { User } from '@/interfaces'
-import { sampleUserData } from '@/utils/sample-data'
 import Layout from '@/components/Layout'
 import ListDetail from '@/components/ListDetail'
 
 type Props = {
-  item?: User
+  data?: User
   errors?: string
 }
 
 export default class StaticPropsDetail extends React.Component<Props> {
   render() {
-    const { item, errors } = this.props
+    const { data, errors } = this.props
 
     if (errors) {
       return (
@@ -26,35 +25,17 @@ export default class StaticPropsDetail extends React.Component<Props> {
     }
 
     return (
-      <Layout title={`${item ? item.name : 'User Detail'} | Next.js + TypeScript Example`}>
-        {item && <ListDetail item={item} />}
+      <Layout title={`${data ? data.name : 'User Detail'} | Next.js + TypeScript Example`}>
+        {data && <ListDetail item={data} />}
       </Layout>
     )
   }
 }
 
-export const getStaticPaths: GetStaticPaths = async () => {
-  // Get the paths we want to pre-render based on users
-  const paths = sampleUserData.map(user => ({
-    params: { id: user.id.toString() }
-  }))
+export const getServerSideProps: GetServerSideProps = async context => {
+  const id = context.query.id
+  const res = await fetch(`http://localhost:3000/api/users/${id}`)
+  const data = await res.json()
 
-  // We'll pre-render only these paths at build time.
-  // { fallback: false } means other routes should 404.
-  return { paths, fallback: false }
-}
-
-// This function gets called at build time on server-side.
-// It won't be called on client-side, so you can even do
-// direct database queries.
-export const getStaticProps: GetStaticProps = async ({ params }) => {
-  try {
-    const id = params?.id
-    const item = sampleUserData.find(data => data.id === Number(id))
-    // By returning { props: item }, the StaticPropsDetail component
-    // will receive `item` as a prop at build time
-    return { props: { item } }
-  } catch (err) {
-    return { props: { errors: err.message } }
-  }
+  return { props: { data } }
 }
