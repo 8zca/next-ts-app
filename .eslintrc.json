@@ -1,14 +1,18 @@
 {
+    "settings": {
+        "react": {
+            "version": "detect"
+        }
+    },
     "env": {
         "browser": true,
         "es6": true,
         "node": true
     },
     "extends": [
-        "plugin:react/recommended",
-        "prettier",
-        "prettier/react",
         "standard",
+        "plugin:prettier/recommended",
+        "plugin:react/recommended",
         "plugin:import/errors",
         "plugin:import/warnings"
     ],
