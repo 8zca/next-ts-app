@@ -9,14 +9,11 @@ const initialState: State = {
   loading: false
 }
 
-const fetchUsers = createAsyncThunk(
-  'users',
-  async (_thunkAPI) => {
-    const response = await fetch('/api/users')
-    const json = await response.json()
-    return json as UserType[]
-  }
-)
+const fetchUsers = createAsyncThunk('users', async _thunkAPI => {
+  const response = await fetch('/api/users')
+  const json = await response.json()
+  return json as UserType[]
+})
 
 const usersModule = createSlice({
   name: 'users',

@@ -6,8 +6,8 @@
     "build": "next build",
     "start": "next start",
     "type-check": "tsc",
-    "format": "prettier-eslint --write 'src/**/*.tsx' 'src/**/*.ts'",
-    "lint": "eslint --ext .js,.jsx,.ts,.tsx ."
+    "format": "prettier --write 'src/**/*.tsx' 'src/**/*.ts'",
+    "lint": "eslint --ext .js,.jsx,.ts,.tsx src/**"
   },
   "dependencies": {
     "@reduxjs/toolkit": "^1.3.3",
