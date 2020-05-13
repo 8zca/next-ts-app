@@ -1,6 +1,6 @@
 {
-  "name": "my-next-app",
-  "version": "0.1.0",
+  "name": "next-ts-app",
+  "version": "0.2.0",
   "private": true,
   "scripts": {
     "dev": "next dev",
@@ -41,5 +41,6 @@
     "eslint-plugin-standard": "^4.0.1",
     "prettier": "^2.0.5",
     "typescript": "^3.9.2"
-  }
+  },
+  "license": "MIT"
 }
