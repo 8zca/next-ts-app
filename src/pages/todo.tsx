@@ -19,7 +19,7 @@ const TodoPage: React.FC = () => {
     setInput('')
   }
 
-  const list = todo.todos.map(row => (
+  const list = todo.todos.map((row) => (
     <Item key={row.id}>
       {row.id} | {row.name} | {row.status} |<button onClick={() => doingAction(row)}>着手</button> |
       <button onClick={() => doneAction(row)}>完了</button>

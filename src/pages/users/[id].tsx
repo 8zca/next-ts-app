@@ -31,7 +31,7 @@ export default class StaticPropsDetail extends React.Component<Props> {
   }
 }
 
-export const getServerSideProps: GetServerSideProps = async context => {
+export const getServerSideProps: GetServerSideProps = async (context) => {
   const id = context.query.id
   const res = await fetch(`http://localhost:3000/api/users/${id}`)
   const data = await res.json()
