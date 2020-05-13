@@ -26,13 +26,13 @@ const todo = createSlice({
       state.todos = [...state.todos, todo]
     },
     doing: (state: State, action: PayloadAction<TodoType>) => {
-      const todo = state.todos.find(row => row.id === action.payload.id)
+      const todo = state.todos.find((row) => row.id === action.payload.id)
       if (todo) {
         todo.status = 'doing'
       }
     },
     done: (state: State, action: PayloadAction<TodoType>) => {
-      const todos = state.todos.filter(row => row.id !== action.payload.id)
+      const todos = state.todos.filter((row) => row.id !== action.payload.id)
       state.todos = todos
     }
   }

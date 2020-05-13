@@ -8,7 +8,7 @@ export default (req: NextApiRequest, res: NextApiResponse) => {
       throw new Error('Cannot find user data')
     }
 
-    const user = sampleUserData.find(row => row.id === Number(id))
+    const user = sampleUserData.find((row) => row.id === Number(id))
     if (user) {
       res.status(200).json(user)
     } else {
