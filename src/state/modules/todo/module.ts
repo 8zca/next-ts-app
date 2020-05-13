@@ -12,7 +12,7 @@ const initialState: State = {
   ]
 }
 
-const todoModule = createSlice({
+const todo = createSlice({
   name: 'todo',
   initialState,
   reducers: {
@@ -38,6 +38,6 @@ const todoModule = createSlice({
   }
 })
 
-export const { create, doing, done } = todoModule.actions
+export const { create, doing, done } = todo.actions
 
-export default todoModule
+export default todo.reducer

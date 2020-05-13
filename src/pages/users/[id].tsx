@@ -1,6 +1,5 @@
 import React from 'react'
 import { GetServerSideProps } from 'next'
-import fetch from 'isomorphic-unfetch'
 import { User } from '@/interfaces'
 import Layout from '@/components/Layout'
 import ListDetail from '@/components/ListDetail'

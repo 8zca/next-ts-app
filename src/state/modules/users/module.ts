@@ -1,5 +1,4 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit'
-import fetch from 'isomorphic-unfetch'
 import { State, UserType } from './types'
 
 const initialState: State = {
@@ -15,7 +14,7 @@ const fetchUsers = createAsyncThunk('users', async _thunkAPI => {
   return json as UserType[]
 })
 
-const usersModule = createSlice({
+const users = createSlice({
   name: 'users',
   initialState,
   reducers: {},
@@ -36,4 +35,4 @@ const usersModule = createSlice({
 
 export { fetchUsers }
 
-export default usersModule
+export default users.reducer
