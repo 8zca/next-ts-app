@@ -1,13 +1,7 @@
 import { combineReducers, configureStore, getDefaultMiddleware } from '@reduxjs/toolkit'
-import counterModule from './modules/counter'
-import todoModule from './modules/todo'
-import usersModule from './modules/users'
+import * as reducers from './modules'
 
-const rootReducer = combineReducers({
-  counter: counterModule.reducer,
-  todo: todoModule.reducer,
-  users: usersModule.reducer
-})
+const rootReducer = combineReducers(reducers)
 
 export type RootState = ReturnType<typeof rootReducer>
 

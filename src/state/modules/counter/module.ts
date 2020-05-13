@@ -1,7 +1,7 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit'
 import { State } from './types'
 
-const counterModule = createSlice({
+const counter = createSlice({
   name: 'counter',
   initialState: 0,
   reducers: {
@@ -10,6 +10,6 @@ const counterModule = createSlice({
   }
 })
 
-export const { increment, decrement } = counterModule.actions
+export const { increment, decrement } = counter.actions
 
-export default counterModule
+export default counter.reducer

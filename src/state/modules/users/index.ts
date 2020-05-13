@@ -1,5 +1,5 @@
-import module, { fetchUsers } from './module'
+import reducer, { fetchUsers } from './module'
 
 export * from './types'
 export { fetchUsers }
-export default module
+export default reducer
