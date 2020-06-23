@@ -1,8 +1,8 @@
 import React from 'react'
 import { GetServerSideProps } from 'next'
 import { User } from '@/interfaces'
-import Layout from '@/components/Layout'
-import ListDetail from '@/components/ListDetail'
+import { Layout } from '@/components/helpers'
+import { ListDetail } from '@/components/standalones'
 
 type Props = {
   data?: User

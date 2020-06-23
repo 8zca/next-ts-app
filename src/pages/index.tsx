@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from 'react-redux'
 import styled from 'styled-components'
 import { increment, decrement } from '@/state/modules/counter'
 import { RootState } from '@/state/store'
-import Layout from '@/components/Layout'
+import Layout from '@/components/helpers/Layout'
 
 const IndexPage: React.FC = () => {
   const dispatch = useDispatch()
