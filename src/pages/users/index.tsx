@@ -1,40 +1,11 @@
-import React, { useEffect } from 'react'
-import { useDispatch, useSelector } from 'react-redux'
-import Link from 'next/link'
-import Layout from '@/components/Layout'
-import List from '@/components/List'
-import { RootState } from '@/state/store'
-import { fetchUsers } from '@/state/modules/users'
+import React from 'react'
+import { Layout } from '@/components/helpers'
+import { Users } from '@/components/standalones'
 
-const Users: React.FC = () => {
-  const dispatch = useDispatch()
-  const users = useSelector((state: RootState) => state.users)
-  const fetch = () => dispatch(fetchUsers())
+const UsersPage: React.FC = () => (
+  <Layout title='Users List | Next.js + TypeScript Example'>
+    <Users />
+  </Layout>
+)
 
-  useEffect(() => {
-    fetch()
-  }, [])
-
-  let content = null
-  if (users.loading) {
-    content = <div>loading...</div>
-  } else if (users.error) {
-    content = <div>fetch error</div>
-  } else {
-    content = <List items={users.list} />
-  }
-
-  return (
-    <Layout title='Users List | Next.js + TypeScript Example'>
-      <h1>Users List</h1>
-      {content}
-      <p>
-        <Link href='/'>
-          <a>Go home</a>
-        </Link>
-      </p>
-    </Layout>
-  )
-}
-
-export default Users
+export default UsersPage
