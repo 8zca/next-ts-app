@@ -14,5 +14,5 @@ jobs:
         run: echo 'true'
 
       - name: Deploy production3
-        if: github_ref == 'refs/heads/master'
+        if: github.ref == 'refs/heads/master'
         run: echo 'true'
