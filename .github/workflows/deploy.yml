@@ -12,9 +12,7 @@ jobs:
       - name: Deploy production1
         if: ${{ github.event.pull_request.merged == true }}
         run: echo 'true'
-      - name: Deploy production2
-        if: GITHUB_REF == 'refs/heads/master'
-        run: echo 'true'
+
       - name: Deploy production3
         if: env.GITHUB_REF == 'refs/heads/master'
         run: echo 'true'
