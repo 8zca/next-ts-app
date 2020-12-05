@@ -4,16 +4,17 @@ on:
   push:
     branches:
       - master
-  pull_request:
 
 jobs:
   deploy:
     runs-on: ubuntu-latest
     steps:
       - name: Deploy production1
-        if: github.event.pull_request.merged == true
+        if: ${{ github.event.pull_request.merged == true }}
         run: echo 'true'
       - name: Deploy production2
-        run: echo ${{ github.event.pull_request.merged }}
+        if: GITHUB_REF == 'refs/heads/master'
+        run: echo 'true'
       - name: Deploy production3
-        run: echo ${GITHUB_REF}
+        if: env.GITHUB_REF == 'refs/heads/master'
+        run: echo 'true'
