@@ -11,6 +11,11 @@ const AboutPage: React.FunctionComponent = () => (
         <a>Go home</a>
       </Link>
     </p>
+    <p>
+      <Link href='http://localhost:3000/jp/city/7613120'>
+        <a>7613120</a>
+      </Link>
+    </p>
   </Layout>
 )
 
