@@ -13,6 +13,7 @@ import theme from '@/styles/theme'
 
 // css
 import 'sanitize.css'
+import '@/styles/styles.css'
 
 const store = createStore()
 
