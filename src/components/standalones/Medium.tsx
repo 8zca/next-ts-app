@@ -1,5 +1,4 @@
-import React, { useState } from 'react'
-// import Editor from 'react-medium-editor'
+import React from 'react'
 import dynamic from 'next/dynamic'
 
 import 'medium-editor/dist/css/medium-editor.css'
