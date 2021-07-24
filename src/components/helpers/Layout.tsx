@@ -35,8 +35,8 @@ const Layout: React.FunctionComponent<Props> = ({ children, title = 'This is the
           <a>Draftail Editor</a>
         </Link>{' '}
         |{' '}
-        <Link href='/editorjs'>
-          <a>Editor.js</a>
+        <Link href='/medium'>
+          <a>Medium editor</a>
         </Link>{' '}
         |{' '}
         <Link href='/users'>
