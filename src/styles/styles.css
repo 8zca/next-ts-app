@@ -19,3 +19,19 @@
 .public-DraftEditorPlaceholder-inner {
   font-family: Georgia, "Times New Roman", Times, serif !important;
 }
+
+/* draftjs */
+.draftjs-editor {
+  box-sizing: border-box;
+  border: 1px solid #ddd;
+  cursor: text;
+  padding: 16px;
+  border-radius: 2px;
+  margin-bottom: 2em;
+  box-shadow: inset 0px 1px 8px -3px #ABABAB;
+  background: #fefefe;
+}
+
+.draftjs-editor :global(.public-DraftEditor-content) {
+  min-height: 140px;
+}
