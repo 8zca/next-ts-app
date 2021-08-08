@@ -25,6 +25,7 @@
     "draft-js-inline-toolbar-plugin": "^3.0.1",
     "draft-js-side-toolbar-plugin": "^3.0.2",
     "draftail": "^1.4.1",
+    "immutable": "^4.0.0-rc.14",
     "medium-editor": "^5.23.3",
     "next": "^9.5.4",
     "prettier": "^2.0.5",
