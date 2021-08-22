@@ -35,3 +35,20 @@
 .draftjs-editor :global(.public-DraftEditor-content) {
   min-height: 140px;
 }
+
+/* tiptap */
+.row {
+  display: flex;
+  justify-content: space-between;
+}
+.col {
+  width: 48%;
+  border: 1px solid #ccc;
+  padding: 20px;
+}
+.tbl {}
+.cell {
+  width: 48%;
+  border: 1px solid #ccc;
+  padding: 20px;
+}
