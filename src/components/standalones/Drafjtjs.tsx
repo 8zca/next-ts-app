@@ -5,7 +5,7 @@ import { BoldButton, ItalicButton, UnderlineButton } from '@draft-js-plugins/but
 import Editor, { createEditorStateWithText } from '@draft-js-plugins/editor'
 import createInlineToolbarPlugin from '@draft-js-plugins/inline-toolbar'
 import createLinkPlugin from '@draft-js-plugins/anchor'
-import React, { useEffect, useRef, useState } from 'react'
+import React, { useRef, useState } from 'react'
 
 const linkPlugin = createLinkPlugin({
   placeholder: 'http://…'
