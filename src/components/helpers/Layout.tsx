@@ -54,6 +54,9 @@ const Layout: React.FunctionComponent<Props> = ({ children, title = 'This is the
         <Link href='/users'>
           <a>Users List</a>
         </Link>{' '}
+        |{' '}<Link href='/users/list'>
+          <a>Users List2</a>
+        </Link>{' '}
         | <a href='/api/users'>Users API</a>
       </nav>
     </header>

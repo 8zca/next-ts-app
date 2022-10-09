@@ -10,20 +10,31 @@ import { Provider } from 'react-redux'
 import { ThemeProvider } from 'styled-components'
 import { createStore } from '@/state/store'
 import theme from '@/styles/theme'
+import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
 
 // css
 import 'sanitize.css'
 import '@/styles/styles.css'
 
+const queryClient = new QueryClient({
+  defaultOptions: {
+    queries: {
+      staleTime: 5 * 1000 * 60
+    }
+  }
+})
+
 const store = createStore()
 
 function App({ Component, pageProps }: AppProps) {
   return (
-    <Provider store={store}>
-      <ThemeProvider theme={theme}>
-        <Component {...pageProps} />
-      </ThemeProvider>
-    </Provider>
+    <QueryClientProvider client={queryClient}>
+      <Provider store={store}>
+        <ThemeProvider theme={theme}>
+          <Component {...pageProps} />
+        </ThemeProvider>
+      </Provider>
+    </QueryClientProvider>
   )
 }
 

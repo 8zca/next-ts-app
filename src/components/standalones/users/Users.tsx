@@ -1,26 +1,21 @@
-import React, { useEffect } from 'react'
-import { useDispatch, useSelector } from 'react-redux'
+import React from 'react'
 import Link from 'next/link'
-import { RootState } from '@/state/store'
-import { fetchUsers } from '@/state/modules/users'
+
 import List from './List'
+import { useQuery } from '@tanstack/react-query'
+import { UserType } from '@/state/modules/users'
+import request from '@/utils/request'
 
 const Users: React.FC = () => {
-  const dispatch = useDispatch()
-  const users = useSelector((state: RootState) => state.users)
-  const fetch = () => dispatch(fetchUsers())
-
-  useEffect(() => {
-    fetch()
-  }, [])
+  const users = useQuery(['todos'], () => request<UserType[]>('/api/users'), { refetchInterval: 5 * 1000 * 60 })
 
   let content = null
-  if (users.loading) {
+  if (users.data) {
+    content = <List items={users.data} />
+  } else if (users.isError) {
     content = <div>loading...</div>
-  } else if (users.error) {
-    content = <div>fetch error</div>
   } else {
-    content = <List items={users.list} />
+    content = <div>fetch error</div>
   }
 
   return (
