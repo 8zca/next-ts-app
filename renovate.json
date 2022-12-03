@@ -4,10 +4,10 @@
     "config:base"
   ],
   "packageRules": [{
-    "packagePatterns": ["*"],
-    "enabled": false
+    "matchUpdateTypes": ["minor", "patch"],
+    "groupName": "all"
   }],
-  "vulnerabilityAlerts": {
-    "enabled": true
-  }
+  "major": {
+    "enabled": false
+ }
 }
