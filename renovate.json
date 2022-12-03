@@ -1,16 +1,22 @@
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
-  "extends": [
-    "config:base"
-  ],
-  "packageRules": [{
-    "matchUpdateTypes": ["minor", "patch"],
-    "groupName": "all"
-  }],
-  "major": {
-    "enabled": false
-  },
-  "schedule": [
-    "every 1 hour after 00:00 and before 23:59 every day"
-  ]
+  "labels": ["renovate"],
+  "extends": ["config:base", ":preserveSemverRanges"],
+  "enabledManagers": ["npm"],
+  "timezone": "Asia/Tokyo",
+  "npm": {
+    "schedule": ["every 1 hour after 00:00 and before 23:59 every day"],
+    "ignoreDeps": ["typescript"],
+    "rangeStrategy": "bump",
+    "semanticCommitType": "chore",
+    "packageRules": [
+      {
+        "groupName": "dependencies",
+        "matchUpdateTypes": ["minor", "patch"]
+      }
+    ],
+    "major": {
+      "enabled": false
+    }
+  }
 }
